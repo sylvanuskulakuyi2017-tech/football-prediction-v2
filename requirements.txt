@@ -1,0 +1,9 @@
+# Direct runtime packages; use requirements.lock.txt to install.
+altair==6.3.0
+joblib==1.6.0
+numpy==2.5.4
+pandas==3.1.1
+scikit-learn==1.9.1
+scipy==1.18.1
+streamlit==1.67.0
+threadpoolctl==3.8.0

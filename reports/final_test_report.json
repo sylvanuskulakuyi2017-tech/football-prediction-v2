@@ -1,0 +1,221 @@
+{
+  "version": "0.1.0",
+  "evaluated_at_utc": "2026-11-07T19:10:46.905635+00:00",
+  "selected_on_validation": "PoissonGradientBoosting",
+  "test_based_reselection": false,
+  "frozen_model_sha256": "e596a062077d273dd61235325f771d2f97c9c9ded89fc67542b14b981f0bb4e4",
+  "test_sha256": "9f6f2c05d06ba502c0513e4df97cf7b771ebbed14d1c4696a97e114e3cc2df9b",
+  "development_rows": 27552,
+  "development_last_date": "2022-12-30",
+  "test_rows": 4081,
+  "test_first_date": "2023-01-02",
+  "test_last_date": "2026-10-06",
+  "test_rows_before_history_filter": 4098,
+  "outcome_probability_order": [
+    "home_win",
+    "draw",
+    "away_win"
+  ],
+  "metrics": [
+    {
+      "accuracy": 0.6057338887527567,
+      "macro_f1": 0.4449427124331115,
+      "log_loss": 0.8690949812528247,
+      "brier_score": 0.510725267182769,
+      "goal_mae": 0.9361712848581251,
+      "scoreline_nll": 2.8756784563571434,
+      "exact_score_accuracy": 0.13281058564077433,
+      "confusion_matrix": [
+        [
+          1681,
+          0,
+          244
+        ],
+        [
+          594,
+          0,
+          338
+        ],
+        [
+          433,
+          0,
+          791
+        ]
+      ],
+      "model": "PoissonGradientBoosting"
+    },
+    {
+      "accuracy": 0.4716981132075472,
+      "macro_f1": 0.2136752136752137,
+      "log_loss": 1.0540175545643926,
+      "brier_score": 0.6360971760106372,
+      "goal_mae": null,
+      "scoreline_nll": null,
+      "exact_score_accuracy": null,
+      "confusion_matrix": [
+        [
+          1925,
+          0,
+          0
+        ],
+        [
+          932,
+          0,
+          0
+        ],
+        [
+          1224,
+          0,
+          0
+        ]
+      ],
+      "model": "DevelopmentPrior"
+    },
+    {
+      "accuracy": 0.4716981132075472,
+      "macro_f1": 0.2136752136752137,
+      "log_loss": 1.0581446975905995,
+      "brier_score": 0.6385386545496039,
+      "goal_mae": 1.0851196506088525,
+      "scoreline_nll": 3.2315977871536328,
+      "exact_score_accuracy": 0.10169076206812055,
+      "confusion_matrix": [
+        [
+          1925,
+          0,
+          0
+        ],
+        [
+          932,
+          0,
+          0
+        ],
+        [
+          1224,
+          0,
+          0
+        ]
+      ],
+      "model": "DevelopmentConstantGoalsPoisson"
+    }
+  ],
+  "selected_model_by_year": {
+    "2023": {
+      "matches": 1057,
+      "accuracy": 0.6102175969725638,
+      "macro_f1": 0.44647072994459175,
+      "log_loss": 0.8620651084924625,
+      "brier_score": 0.5055095229049325,
+      "goal_mae": 0.934308310531656,
+      "scoreline_nll": 2.8652749226146303,
+      "exact_score_accuracy": 0.14853358561967833,
+      "confusion_matrix": [
+        [
+          430,
+          0,
+          62
+        ],
+        [
+          142,
+          0,
+          86
+        ],
+        [
+          122,
+          0,
+          215
+        ]
+      ]
+    },
+    "2024": {
+      "matches": 1231,
+      "accuracy": 0.5889520714865962,
+      "macro_f1": 0.43658119658119654,
+      "log_loss": 0.8983025327910884,
+      "brier_score": 0.5300055530846625,
+      "goal_mae": 0.912253551306648,
+      "scoreline_nll": 2.815732161340001,
+      "exact_score_accuracy": 0.132412672623883,
+      "confusion_matrix": [
+        [
+          495,
+          0,
+          73
+        ],
+        [
+          186,
+          0,
+          121
+        ],
+        [
+          126,
+          0,
+          230
+        ]
+      ]
+    },
+    "2025": {
+      "matches": 997,
+      "accuracy": 0.6248746238716149,
+      "macro_f1": 0.457822623883078,
+      "log_loss": 0.8330041639035609,
+      "brier_score": 0.48910183885424346,
+      "goal_mae": 0.9675580312447395,
+      "scoreline_nll": 2.909173446019037,
+      "exact_score_accuracy": 0.11735205616850551,
+      "confusion_matrix": [
+        [
+          421,
+          0,
+          62
+        ],
+        [
+          141,
+          0,
+          77
+        ],
+        [
+          94,
+          0,
+          202
+        ]
+      ]
+    },
+    "2026": {
+      "matches": 796,
+      "accuracy": 0.6017587939698492,
+      "macro_f1": 0.43937120400142904,
+      "log_loss": 0.8784651124856342,
+      "brier_score": 0.514918191554606,
+      "goal_mae": 0.9363211689253252,
+      "scoreline_nll": 2.940246194597134,
+      "exact_score_accuracy": 0.13190954773869346,
+      "confusion_matrix": [
+        [
+          335,
+          0,
+          47
+        ],
+        [
+          125,
+          0,
+          54
+        ],
+        [
+          91,
+          0,
+          144
+        ]
+      ]
+    }
+  },
+  "history_policy": "Sequential forecasts: earlier validation/test results may update history before later fixtures. Model fitting remains restricted to the designated fitting period.",
+  "target_definition": "Recorded final score, including extra time, excluding penalty shoot-outs",
+  "calibration": "No post-fit probability calibration applied.",
+  "metric_definitions": {
+    "accuracy": "fraction, not percent",
+    "brier_score": "multiclass sum convention, range 0 to 2",
+    "goal_mae": "mean absolute goal error across both teams"
+  },
+  "predictions_sha256": "12484c7954dd4453c03716a828aa48127a48d541cfacc289f6addc26bc245bcb"
+}

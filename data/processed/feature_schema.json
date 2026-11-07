@@ -1,0 +1,78 @@
+{
+  "version": "0.1.0",
+  "numeric_features": [
+    "is_neutral",
+    "is_friendly",
+    "home_elo",
+    "away_elo",
+    "elo_diff",
+    "elo_home_expected_score",
+    "home_history_matches",
+    "away_history_matches",
+    "home_days_rest",
+    "away_days_rest",
+    "home_goals_for_mean_5",
+    "home_goals_against_mean_5",
+    "home_points_mean_5",
+    "home_win_rate_5",
+    "away_goals_for_mean_5",
+    "away_goals_against_mean_5",
+    "away_points_mean_5",
+    "away_win_rate_5",
+    "home_goals_for_mean_10",
+    "home_goals_against_mean_10",
+    "home_points_mean_10",
+    "home_win_rate_10",
+    "away_goals_for_mean_10",
+    "away_goals_against_mean_10",
+    "away_points_mean_10",
+    "away_win_rate_10",
+    "h2h_matches_3",
+    "h2h_home_goals_mean_3",
+    "h2h_away_goals_mean_3",
+    "h2h_home_points_mean_3"
+  ],
+  "target_columns": [
+    "home_score",
+    "away_score",
+    "outcome",
+    "total_goals",
+    "both_teams_scored"
+  ],
+  "audit_columns_do_not_use_as_features": [
+    "latest_history_date",
+    "eligible_for_model",
+    "split"
+  ],
+  "target_definition": "Recorded final score, including extra time, excluding penalty shoot-outs",
+  "missing_values": "Blank means unavailable. Fit any imputer and scaler on training rows only.",
+  "elo": {
+    "kind": "custom engineering feature",
+    "initial": 1500.0,
+    "k": 20.0,
+    "scale": 400,
+    "home_advantage": 60.0,
+    "neutral_advantage": 0
+  },
+  "elo_expected_score_definition": "Expected win/draw/loss score with win=1, draw=0.5, loss=0; not a home-win probability.",
+  "form_windows": [
+    5,
+    10
+  ],
+  "head_to_head_window": 3,
+  "window_definition": "Uses up to the specified number of prior appearances; an empty history is unavailable, not zero.",
+  "form_points": {
+    "win": 3,
+    "draw": 1,
+    "loss": 0
+  },
+  "history_initialization": "Begins at the first prepared match; no pre-1990 results are used by default.",
+  "same_date_policy": "All features use strictly earlier calendar dates. All same-date ratings use the common pre-date state.",
+  "within_date_history_order": "Deterministic match-ID order for subsequent rolling windows; kickoff order is unavailable.",
+  "evaluation_mode": "Sequential forecasts: earlier validation/test results may update history before later fixtures. Model fitting remains restricted to the designated fitting period.",
+  "minimum_prior_appearances_each_team": 5,
+  "validation_start": "2019-01-01",
+  "test_start": "2023-01-01",
+  "defaults_note": "Engineering defaults fixed before model evaluation; tune using training/validation only.",
+  "is_friendly_definition": "Tournament field equals Friendly, ignoring case."
+}

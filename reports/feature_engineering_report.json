@@ -1,0 +1,65 @@
+{
+  "builder_version": "0.1.0",
+  "created_at_utc": "2026-11-07T18:26:35.862163+00:00",
+  "input_sha256": "66fe9543887a61124bb1c69f3040b26578e19f956a31dc5a0f23525df14a8e51",
+  "total_feature_rows": 32821,
+  "numeric_features": 30,
+  "eligible_rows": 31633,
+  "excluded_for_insufficient_history": 1188,
+  "splits": {
+    "train": {
+      "rows": 23980,
+      "first_match": "1990-03-08",
+      "last_match": "2018-12-31",
+      "before_history_filter": 25126,
+      "outcomes": {
+        "home_win": 11625,
+        "draw": 5717,
+        "away_win": 6638
+      },
+      "missing_feature_values": {
+        "h2h_home_goals_mean_3": 5110,
+        "h2h_away_goals_mean_3": 5110,
+        "h2h_home_points_mean_3": 5110
+      }
+    },
+    "validation": {
+      "rows": 3572,
+      "first_match": "2019-01-02",
+      "last_match": "2022-12-30",
+      "before_history_filter": 3597,
+      "outcomes": {
+        "home_win": 1735,
+        "draw": 805,
+        "away_win": 1032
+      },
+      "missing_feature_values": {
+        "h2h_home_goals_mean_3": 408,
+        "h2h_away_goals_mean_3": 408,
+        "h2h_home_points_mean_3": 408
+      }
+    },
+    "test": {
+      "rows": 4081,
+      "first_match": "2023-01-02",
+      "last_match": "2026-10-06",
+      "before_history_filter": 4098,
+      "outcomes": {
+        "away_win": 1224,
+        "home_win": 1925,
+        "draw": 932
+      },
+      "missing_feature_values": {
+        "h2h_home_goals_mean_3": 483,
+        "h2h_away_goals_mean_3": 483,
+        "h2h_home_points_mean_3": 483
+      }
+    }
+  },
+  "output_sha256": {
+    "features.csv": "ce30569629e04e54ca72dce143b767599d7b424207e578c63ac378f5700804d2",
+    "train.csv": "3d6a3901a141560a2db9eb94061d4f4ec84934fbe7ed0bc4501fab9b89e03ae1",
+    "validation.csv": "a10aacd756ee669166ec56b2742a551f4db6b62a2ea4339b94363c3f341c79be",
+    "test.csv": "9f6f2c05d06ba502c0513e4df97cf7b771ebbed14d1c4696a97e114e3cc2df9b"
+  }
+}

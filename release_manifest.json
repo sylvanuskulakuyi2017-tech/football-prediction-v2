@@ -1,0 +1,45 @@
+{
+  "format_version": 1,
+  "created_at_utc": "2026-11-07T21:11:10.189008+00:00",
+  "python_major_minor": "3.14",
+  "runtime_packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0",
+    "streamlit": "1.67.0",
+    "altair": "6.3.0"
+  },
+  "asset_sha256": {
+    "data/raw/international_results/results.csv": "09aac809e317f3004c69720a38addb656c49ebb19f1937deab96f96e3362257a",
+    "data/processed/matches.csv": "66fe9543887a61124bb1c69f3040b26578e19f956a31dc5a0f23525df14a8e51",
+    "data/processed/feature_schema.json": "b75d476a1ac6fe165ff3595ad46e4c5b63e2ebb815bf462a3e3e201264553251",
+    "models/frozen/frozen_model.joblib": "e596a062077d273dd61235325f771d2f97c9c9ded89fc67542b14b981f0bb4e4",
+    "reports/dataset_validation.json": "5275b415536cb12abfabc10a08fa7a599ada40a12efcd488bc0b4bd1b197851f",
+    "reports/dataset_preparation.json": "55738d7fbc9be118a4bfacb78d28860084a331fafe7f4ae2f02618f77088932d",
+    "reports/feature_engineering_report.json": "5f1c450d0fb064cbd22fa218568e253fa2cdca778c6df2f8a00700b64172764d",
+    "reports/baseline_validation_report.json": "71feede62beee6b8220bffe60aefdbfdddf397c91fbdcf8b56e8ae9ad6a8f7e6",
+    "reports/baseline_validation_metrics.csv": "6d4be040bd6c222d204ce9118e70ad6e3d556415a597fd91dc6e233da2a7626e",
+    "reports/final_test_plan.json": "466bc27e3f894a59b19a4ca84cbb28a840b32562bf60cd8806022843c20cc870",
+    "reports/final_test_report.json": "51c050bb21beb480ea4a62bb273d30ed560e5088ef01140d265af3daefadf094",
+    "reports/final_test_metrics.csv": "27b7a23c5559f99612d7d109782cdc00cb590cc7603e78b58df2af20ab19e2b1",
+    "reports/final_test_predictions.csv": "12484c7954dd4453c03716a828aa48127a48d541cfacc289f6addc26bc245bcb",
+    "data/raw/international_results/README.md": "0d50b5f6fe2b658eba52a4477e4e48af6ca61e89e2c5265b153e3c12d7305b76",
+    "data/raw/international_results/LICENSE": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+  },
+  "source_sha256_at_export": {
+    "app.py": "9cb370788a236f3e238409f0c46419d1236deba2d26dde3eb23f77c9d561c645",
+    "scripts/validate_dataset.py": "8a78880278bbb77f702c1aac507a33ea6a8ec21e5861a4a4c2fd22e3b03f9456",
+    "scripts/prepare_dataset.py": "79e2d721c60634aa2afdd08cb2bd80a232b5ba68b936cd961242ee9ff4923201",
+    "scripts/build_features.py": "c3aae172bb26368f0b50555e2269e60c3257ef7616efb886f9bb3f5ea3823236",
+    "scripts/train_baselines.py": "7756b8a1574ee7f7916b48796ce3b8566e06004a0933897f26a48c05e1159ace",
+    "scripts/evaluate_final_test.py": "8dd63af2ba8f5604e11565ef98241e3dd2f1af40417af145528e8f54f72c35e4",
+    "scripts/predict_match.py": "9edbbfdb97c3c9017360cde93c8dc1b1ab70787ff5e720ef3b35304fe52e371b"
+  },
+  "selected_model": "PoissonGradientBoosting",
+  "test_rows": 4081,
+  "dataset_through": "2026-10-06",
+  "model_fitted_through": "2022-12-30"
+}

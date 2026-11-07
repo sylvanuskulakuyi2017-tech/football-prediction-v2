@@ -1,0 +1,274 @@
+{
+  "builder_version": "0.1.0",
+  "created_at_utc": "2026-11-07T18:52:47.888295+00:00",
+  "python": "3.14.4",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0"
+  },
+  "seed": 42,
+  "training_rows": 23980,
+  "validation_rows": 3572,
+  "input_sha256": {
+    "train": "3d6a3901a141560a2db9eb94061d4f4ec84934fbe7ed0bc4501fab9b89e03ae1",
+    "validation": "a10aacd756ee669166ec56b2742a551f4db6b62a2ea4339b94363c3f341c79be",
+    "feature_schema": "b75d476a1ac6fe165ff3595ad46e4c5b63e2ebb815bf462a3e3e201264553251"
+  },
+  "outcome_probability_order": [
+    "home_win",
+    "draw",
+    "away_win"
+  ],
+  "selection_metric": "validation log loss, lower is better",
+  "best_outcome_predictor": "PoissonGradientBoosting",
+  "best_goal_model": "PoissonGradientBoosting",
+  "test_evaluated": false,
+  "test_file_opened": false,
+  "metrics": [
+    {
+      "accuracy": 0.6108622620380739,
+      "macro_f1": 0.44663109282022634,
+      "log_loss": 0.8595712368546463,
+      "brier_score": 0.5039589795104968,
+      "goal_mae": 0.9150398049146292,
+      "scoreline_nll": 2.7980497045056674,
+      "exact_score_accuracy": 0.13745800671892497,
+      "confusion_matrix": [
+        [
+          1518,
+          0,
+          217
+        ],
+        [
+          545,
+          0,
+          260
+        ],
+        [
+          368,
+          0,
+          664
+        ]
+      ],
+      "model": "PoissonGradientBoosting",
+      "seconds": 1.1568037250008274,
+      "has_goal_model": true
+    },
+    {
+      "accuracy": 0.6103023516237402,
+      "macro_f1": 0.4458001621668875,
+      "log_loss": 0.8611355028150693,
+      "brier_score": 0.5049673093231722,
+      "goal_mae": 0.9220306883042513,
+      "scoreline_nll": 2.8079212225681616,
+      "exact_score_accuracy": 0.13465845464725643,
+      "confusion_matrix": [
+        [
+          1515,
+          0,
+          220
+        ],
+        [
+          530,
+          0,
+          275
+        ],
+        [
+          367,
+          0,
+          665
+        ]
+      ],
+      "model": "RandomForest",
+      "seconds": 41.36077830799968,
+      "has_goal_model": true
+    },
+    {
+      "accuracy": 0.6072228443449048,
+      "macro_f1": 0.44283194207915727,
+      "log_loss": 0.8647427541133935,
+      "brier_score": 0.506971224830251,
+      "goal_mae": 0.9231579824700775,
+      "scoreline_nll": 2.8138035546421354,
+      "exact_score_accuracy": 0.13157894736842105,
+      "confusion_matrix": [
+        [
+          1528,
+          0,
+          207
+        ],
+        [
+          560,
+          0,
+          245
+        ],
+        [
+          391,
+          0,
+          641
+        ]
+      ],
+      "model": "RegularizedPoisson",
+      "seconds": 0.17226784600006795,
+      "has_goal_model": true
+    },
+    {
+      "accuracy": 0.4857222844344905,
+      "macro_f1": 0.2179511337227561,
+      "log_loss": 1.045898501846185,
+      "brier_score": 0.6301313780001021,
+      "goal_mae": null,
+      "scoreline_nll": null,
+      "exact_score_accuracy": null,
+      "confusion_matrix": [
+        [
+          1735,
+          0,
+          0
+        ],
+        [
+          805,
+          0,
+          0
+        ],
+        [
+          1032,
+          0,
+          0
+        ]
+      ],
+      "model": "TrainingPrior",
+      "seconds": 0.011273291999714274,
+      "has_goal_model": false
+    },
+    {
+      "accuracy": 0.4857222844344905,
+      "macro_f1": 0.2179511337227561,
+      "log_loss": 1.0486818991946305,
+      "brier_score": 0.6316803106512374,
+      "goal_mae": 1.0859836537913734,
+      "scoreline_nll": 3.228797353831411,
+      "exact_score_accuracy": 0.10274356103023516,
+      "confusion_matrix": [
+        [
+          1735,
+          0,
+          0
+        ],
+        [
+          805,
+          0,
+          0
+        ],
+        [
+          1032,
+          0,
+          0
+        ]
+      ],
+      "model": "ConstantGoalsPoisson",
+      "seconds": 0.012455973000214726,
+      "has_goal_model": true
+    }
+  ],
+  "model_configs": {
+    "RegularizedPoisson": "Pipeline(steps=[('simpleimputer',\n                 SimpleImputer(add_indicator=True, keep_empty_features=True,\n                               strategy='median')),\n                ('standardscaler', StandardScaler()),\n                ('poissonregressor',\n                 PoissonRegressor(max_iter=500, tol=1e-07))])",
+    "RandomForest": "Pipeline(steps=[('simpleimputer',\n                 SimpleImputer(add_indicator=True, keep_empty_features=True,\n                               strategy='median')),\n                ('randomforestregressor',\n                 RandomForestRegressor(max_depth=16, min_samples_leaf=10,\n                                       n_estimators=200, n_jobs=2,\n                                       random_state=42))])",
+    "PoissonGradientBoosting": "HistGradientBoostingRegressor(early_stopping=False, l2_regularization=1.0,\n                              learning_rate=0.05, loss='poisson', max_iter=200,\n                              max_leaf_nodes=15, random_state=42)"
+  },
+  "metric_definitions": {
+    "accuracy": "fraction, not percent",
+    "brier_score": "mean sum over three classes of squared errors; range 0 to 2",
+    "goal_mae": "mean absolute goal error over both teams",
+    "scoreline_nll": "mean negative log probability of the observed goal pair",
+    "exact_score_accuracy": "fraction matching the independent-Poisson modal score pair"
+  },
+  "forecast_assumptions": "Independent Poisson goals; recorded final goals may include extra time; no penalty-shootout goals.",
+  "rate_floor": 1e-08,
+  "prior_additive_smoothing": 1.0,
+  "probability_note": "Raw model-derived probabilities; no post-fit calibration has been applied.",
+  "history_policy": "Sequential forecasts: earlier validation/test results may update history before later fixtures. Model fitting remains restricted to the designated fitting period.",
+  "feature_schema": {
+    "version": "0.1.0",
+    "numeric_features": [
+      "is_neutral",
+      "is_friendly",
+      "home_elo",
+      "away_elo",
+      "elo_diff",
+      "elo_home_expected_score",
+      "home_history_matches",
+      "away_history_matches",
+      "home_days_rest",
+      "away_days_rest",
+      "home_goals_for_mean_5",
+      "home_goals_against_mean_5",
+      "home_points_mean_5",
+      "home_win_rate_5",
+      "away_goals_for_mean_5",
+      "away_goals_against_mean_5",
+      "away_points_mean_5",
+      "away_win_rate_5",
+      "home_goals_for_mean_10",
+      "home_goals_against_mean_10",
+      "home_points_mean_10",
+      "home_win_rate_10",
+      "away_goals_for_mean_10",
+      "away_goals_against_mean_10",
+      "away_points_mean_10",
+      "away_win_rate_10",
+      "h2h_matches_3",
+      "h2h_home_goals_mean_3",
+      "h2h_away_goals_mean_3",
+      "h2h_home_points_mean_3"
+    ],
+    "target_columns": [
+      "home_score",
+      "away_score",
+      "outcome",
+      "total_goals",
+      "both_teams_scored"
+    ],
+    "audit_columns_do_not_use_as_features": [
+      "latest_history_date",
+      "eligible_for_model",
+      "split"
+    ],
+    "target_definition": "Recorded final score, including extra time, excluding penalty shoot-outs",
+    "missing_values": "Blank means unavailable. Fit any imputer and scaler on training rows only.",
+    "elo": {
+      "kind": "custom engineering feature",
+      "initial": 1500.0,
+      "k": 20.0,
+      "scale": 400,
+      "home_advantage": 60.0,
+      "neutral_advantage": 0
+    },
+    "elo_expected_score_definition": "Expected win/draw/loss score with win=1, draw=0.5, loss=0; not a home-win probability.",
+    "form_windows": [
+      5,
+      10
+    ],
+    "head_to_head_window": 3,
+    "window_definition": "Uses up to the specified number of prior appearances; an empty history is unavailable, not zero.",
+    "form_points": {
+      "win": 3,
+      "draw": 1,
+      "loss": 0
+    },
+    "history_initialization": "Begins at the first prepared match; no pre-1990 results are used by default.",
+    "same_date_policy": "All features use strictly earlier calendar dates. All same-date ratings use the common pre-date state.",
+    "within_date_history_order": "Deterministic match-ID order for subsequent rolling windows; kickoff order is unavailable.",
+    "evaluation_mode": "Sequential forecasts: earlier validation/test results may update history before later fixtures. Model fitting remains restricted to the designated fitting period.",
+    "minimum_prior_appearances_each_team": 5,
+    "validation_start": "2019-01-01",
+    "test_start": "2023-01-01",
+    "defaults_note": "Engineering defaults fixed before model evaluation; tune using training/validation only.",
+    "is_friendly_definition": "Tournament field equals Friendly, ignoring case."
+  },
+  "model_bundle_sha256": "29407d04e39689cc088fe638e1a185a87251c0b94f641087e3ef7d0e0483d737"
+}

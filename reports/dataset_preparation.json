@@ -1,0 +1,51 @@
+{
+  "preparation_version": "0.1.0",
+  "created_at_utc": "2026-11-07T18:16:18.085816+00:00",
+  "input_file": "/run/media/kulakunyi-sylvanus/SharedData/Research/football-prediction-v2/data/raw/international_results/results.csv",
+  "input_sha256": "09aac809e317f3004c69720a38addb656c49ebb19f1937deab96f96e3362257a",
+  "as_of_date": "2026-11-07",
+  "start_date": "1990-01-01",
+  "raw_rows": 49940,
+  "excluded_before_start_date": 17119,
+  "included_rows": 32821,
+  "first_match": "1990-01-12",
+  "last_match": "2026-10-06",
+  "outcome_counts": {
+    "home_win": 15907,
+    "draw": 7697,
+    "away_win": 9217
+  },
+  "raw_validation_status": "REVIEW",
+  "raw_validation_warnings": {
+    "repeated_fixture_key_review_needed": 1,
+    "conflicting_scores_review_needed": 1
+  },
+  "repeated_fixture_keys_inside_window": 0,
+  "raw_data_modified": false,
+  "target_definition": "Recorded final score, including extra time, excluding penalty shoot-outs",
+  "target_columns_do_not_use_as_features": [
+    "home_score",
+    "away_score",
+    "outcome",
+    "total_goals",
+    "both_teams_scored"
+  ],
+  "prematch_context_columns": [
+    "date",
+    "home_team",
+    "away_team",
+    "tournament",
+    "city",
+    "country",
+    "neutral"
+  ],
+  "context_note": "Source metadata is not an independently verified pre-kickoff availability archive.",
+  "row_order": "date, home_team, away_team, tournament",
+  "same_date_policy_for_future_features": "Only use results from strictly earlier dates; row order within a date does not establish kickoff order.",
+  "team_note": "Names include historical and non-FIFA teams; presence does not establish current activity or sufficient recent history.",
+  "window_rationale": "Initial engineering choice for a modern-era prototype, not a performance-selected cutoff.",
+  "split_status": "Not yet split. Chronological train/validation/test boundaries must be defined before fitting models.",
+  "output_file": "/run/media/kulakunyi-sylvanus/SharedData/Research/football-prediction-v2/data/processed/matches.csv",
+  "output_sha256": "66fe9543887a61124bb1c69f3040b26578e19f956a31dc5a0f23525df14a8e51",
+  "team_names_in_window": 327
+}
