@@ -355,6 +355,7 @@ def main():
         "Third-party software remains subject to its respective licences.  \n"
         "An independent educational portfolio project. "
         "Predictions are probabilistic estimates and do not guarantee match outcomes."
+        "This tool does not provide gambling advice or financial recommendations, and the author assumes no liability for any losses incurred."
     )
 
 if __name__ == "__main__":
