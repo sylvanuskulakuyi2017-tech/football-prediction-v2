@@ -13,7 +13,7 @@ After pushing this release to GitHub and passing its checks:
 
 The startup script verifies dependency versions, asset hashes and one saved
 forecast before launching Streamlit. It listens on 0.0.0.0 and Railway's PORT
-variable, with a local fallback of 8501. No database, volume or API key is required
+variable, with a local fallback of 8080. No database, volume or API key is required
 for this snapshot-based version. The app exports predictions through downloads.
 
 The files use the Dockerfile deployment route. Railway-specific healthcheck
