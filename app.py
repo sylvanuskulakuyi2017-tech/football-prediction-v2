@@ -335,6 +335,9 @@ def main():
         # Footer — after the Methods and data expander
     st.divider()
 
+
+
+    
     st.caption(
         "[GitHub](https://github.com/sylvanuskulakuyi2017-tech/football-prediction-v2)"
         " · "
