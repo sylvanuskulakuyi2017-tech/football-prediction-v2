@@ -326,17 +326,33 @@ def main():
     if page == "Match scenario": scenario_page(predictor, signature)
     elif page == "Historical replay": replay_page(predictor, signature)
     else: performance_page(signature)
-    st.write("[GitHub](https://github.com/sylvanuskulakuyi2017-tech/football-prediction-v2) · [Code licence](https://github.com/sylvanuskulakuyi2017-tech/football-prediction-v2/blob/main/LICENSE) · [Data source](https://github.com/martj42/international_results)")
-    st.write("© 2026 Sylvanus Kulakunyi. International Match Lab — Football Prediction v2.")
-    st.write("Source code is available under the MIT License. Match data is sourced from Mart Jürisoo’s international_results dataset, released under CC0 1.0. Third-party software remains subject to its respective licences.")
-    st.write("An independent educational portfolio project. Predictions are probabilistic estimates and do not guarantee match outcomes.")
     st.markdown('<div class="rule"></div>', unsafe_allow_html=True)
     with st.expander("Methods and data"):
         st.write("Forecasts use two goal models and an independent Poisson distribution. Team history uses strictly earlier calendar dates. Model settings were selected on validation data before the held-out test.")
         st.write("The target is the recorded final score, including extra time and excluding penalty shoot-outs. These are model-derived, uncalibrated probabilities.")
         st.markdown("Data: [Mart Jürisoo’s international football results](https://github.com/martj42/international_results), released under CC0-1.0. The modelling window begins in 1990. Historical and non-FIFA team names may appear.")
         st.caption("The benchmark belongs to the saved frozen model. Historical replay is limited to its held-out period.")
+        # Footer — after the Methods and data expander
+    st.divider()
 
+    st.caption(
+        "[GitHub](https://github.com/sylvanuskulakuyi2017-tech/football-prediction-v2)"
+        " · "
+        "[Code licence](https://github.com/sylvanuskulakuyi2017-tech/"
+        "football-prediction-v2/blob/main/LICENSE)"
+        " · "
+        "[Data source](https://github.com/martj42/international_results)"
+    )
+
+    st.caption(
+        "© 2026 Sylvanus Kulakunyi. "
+        "International Match Lab — Football Prediction v2.  \n"
+        "Source code is available under the MIT License. "
+        "Match data: Mart Jürisoo’s international_results dataset, CC0 1.0. "
+        "Third-party software remains subject to its respective licences.  \n"
+        "An independent educational portfolio project. "
+        "Predictions are probabilistic estimates and do not guarantee match outcomes."
+    )
 
 if __name__ == "__main__":
     main()
