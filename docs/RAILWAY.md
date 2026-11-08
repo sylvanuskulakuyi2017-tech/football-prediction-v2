@@ -27,10 +27,10 @@ If Docker is available, from the repository root:
 
 ```bash
 docker build -t football-prediction-v2 .
-docker run --rm -p 8501:8501 -e PORT=8501 football-prediction-v2
+docker run --rm -p 8080:8080 -e PORT=8080 football-prediction-v2
 ```
 
-Open http://localhost:8501. A successful local Streamlit check alone does not
+Open http://localhost:8080. A successful local Streamlit check alone does not
 establish that a Docker build or Railway deployment has succeeded. The exporter
 does not start Docker or create cloud resources. GitHub Actions runs the build
 after you push the repository.
